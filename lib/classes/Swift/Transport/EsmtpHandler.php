@@ -48,9 +48,11 @@ interface Swift_Transport_EsmtpHandler
     /**
      * Get params which are appended to RCPT TO:<>.
      *
+     * @param string $address 
+     *
      * @return string[]
      */
-    public function getRcptParams();
+    public function getRcptParams($address);
 
     /**
      * Runs when a command is due to be sent.

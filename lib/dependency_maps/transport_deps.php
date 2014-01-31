@@ -5,7 +5,7 @@ Swift_DependencyContainer::getInstance()
     ->asNewInstanceOf('Swift_Transport_EsmtpTransport')
     ->withDependencies(array(
         'transport.buffer',
-        array('transport.authhandler'),
+        array('transport.authhandler', 'transport.notifyhandler'),
         'transport.eventdispatcher'
     ))
 
@@ -59,6 +59,9 @@ Swift_DependencyContainer::getInstance()
 
     ->register('transport.plainauth')
     ->asNewInstanceOf('Swift_Transport_Esmtp_Auth_PlainAuthenticator')
+
+    ->register('transport.notifyhandler')
+    ->asNewInstanceOf('Swift_Transport_Esmtp_NotifyHandler')
 
     ->register('transport.eventdispatcher')
     ->asNewInstanceOf('Swift_Events_SimpleEventDispatcher')

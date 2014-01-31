@@ -333,7 +333,7 @@ class Swift_Transport_EsmtpTransport extends Swift_Transport_AbstractSmtpTranspo
         $handlers = $this->_getActiveHandlers();
         $params = array();
         foreach ($handlers as $handler) {
-            $params = array_merge($params, (array) $handler->getRcptParams());
+            $params = array_merge($params, (array) $handler->getRcptParams($address));
         }
         $paramStr = !empty($params) ? ' ' . implode(' ', $params) : '';
         $this->executeCommand(

@@ -199,7 +199,7 @@ class Swift_Transport_Esmtp_AuthHandler implements Swift_Transport_EsmtpHandler
     /**
      * Not used.
      */
-    public function getRcptParams()
+    public function getRcptParams($address)
     {
         return array();
     }
